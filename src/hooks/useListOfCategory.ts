@@ -8,7 +8,7 @@ interface IProps {
 export const useListOfCategory = ({ category }: IProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const [data, setdata] = useState<IPokemonDetail[]>([]);
+  const [data, setData] = useState<IPokemonDetail[]>([]);
 
   const getPokemonsByCategory = useCallback(async (type: string) => {
     const { data } = await categoryService.getPokemonsByCategory(type);
@@ -32,7 +32,7 @@ export const useListOfCategory = ({ category }: IProps) => {
     (async () => {
       try {
         const categories = await getPokemonsByCategory(category);
-        setdata(categories);
+        setData(categories);
       } catch (error) {
         console.error(error);
       }

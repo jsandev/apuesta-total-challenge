@@ -44,7 +44,7 @@ export const PokemonCard: React.FC<IProps> = ({ data }) => {
 
   return (
     <div
-      className="w-[290px] snap-start sm:snap-center flex flex-col cursor-pointer"
+      className="w-[18.125rem] snap-start sm:snap-center flex flex-col cursor-pointer"
       onClick={onClick}
     >
       <div className="w-full z-[1] h-[300px] -mb-[8rem] p-[1rem]">

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { PokemonCard } from "./PokemonCard";
+import { SkeletonPokemonCard } from "./SkeletonPokemonCard";
 
 import { useListOfCategory } from "../../hooks/useListOfCategory";
 
@@ -34,11 +35,13 @@ export const ListOfCategory: React.FC<IProps> = ({ title, category }) => {
       </div>
       <div
         ref={scrollRef}
-        className="w-full snap-x grid grid-cols-[repeat(auto-fit,280px)] grid-flow-col-dense overflow-x-auto gap-[3rem] no-scroll"
+        className="w-full snap-x grid grid-cols-[repeat(auto-fill,17.5rem)] grid-flow-col auto-cols-[17.5rem] overflow-x-auto gap-[3rem] no-scroll"
       >
-        {data.map((pokemon) => {
-          return <PokemonCard key={pokemon.id} data={pokemon} />;
-        })}
+        {data.length === 0
+          ? [...Array(10).keys()].map((_, i) => <SkeletonPokemonCard key={i} />)
+          : data.map((pokemon) => {
+              return <PokemonCard key={pokemon.id} data={pokemon} />;
+            })}
       </div>
     </div>
   );
