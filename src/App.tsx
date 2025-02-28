@@ -23,7 +23,7 @@ function App() {
 
   return (
     <MainLayout>
-      <section className="w-full max-w-[80rem] mx-auto flex flex-col gap-[4rem] px-[1rem] md:px-[1.5rem] lg:px-[4rem] pt-[2rem] md:pt-[4rem] overflow-x-hidden pb-[7.5rem]">
+      <section className="w-full max-w-[80rem] mx-auto flex flex-col gap-[4rem] px-[1rem] md:px-[1.5rem] lg:px-[4rem] pt-[2rem] md:pt-[4rem] overflow-x-hidden pb-[7.5rem] no-scroll">
         <div className="w-full flex flex-col gap-[0.75rem] md:hidden">
           <p className="font-normal text-[0.875rem] block md:hidden dark:text-white line-clamp-1">
             Hola, {user}
