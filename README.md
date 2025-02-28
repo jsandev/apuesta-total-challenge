@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# Prueba técnica para Apuesta total
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto se realizó en el siguiente stack:
 
-Currently, two official plugins are available:
+1. React >= 19
+2. TailwindCss
+3. Redux Toolkit
+4. React Router
+5. Microfrontend usando Module Federation: @originjs/vite-plugin-federation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Se hace uso de la siguiente librería:
 
-## Expanding the ESLint configuration
+- [@originjs/vite-plugin-federation](https://www.npmjs.com/package/@originjs/vite-plugin-federation) para implementar la conexión entre microfrontends
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Levantar los proyectos
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Por favor, debe realizar los pasos en orden para lograr levantar los microfrontends. Tenemos un shell(at-challenge) y 2 microfrontends 1 y 2.
+
+Asegurese de instalar pnpm, usando npm
+
+```bash
+npm install -g pnpm@latest-10
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+o
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install -g @pnpm/exe@latest-10
 ```
+
+### Iniciar Microfrontend 1
+
+Abre una nueva terminal, y asegurarse de estar en el repositorio de microfront1
+
+```bash
+cd microfront1
+pnpm install
+pnpm run build && pnpm run preview
+```
+
+Se levantará el microfront1 en el puerto 3001
+Miralo en: [http://localhost:3001](http://localhost:3001)
+
+### Iniciar Microfrontend 2
+
+Abre una nueva terminal, y asegurarse de estar en el repositorio de microfront2
+
+```bash
+cd microfront2
+pnpm install
+pnpm run build && pnpm run preview
+```
+
+Se levantará el microfront2 en el puerto 3002
+Miralo en: [http://localhost:3002](http://localhost:3002)
+
+### Iniciar el host o shell
+
+Abre una nueva terminal, y asegurarse de estar en el repositorio de at-challenge
+
+```bash
+pnpm install
+pnpm run dev
+```
+
+Se levantará el host en el puerto 3000
+Miralo en: [http://localhost:3000](http://localhost:3000)
+
+Para más información las configuraciones se encuentra dentro de cada archivo `vite.config.js`.
+
+## Demostración 📸
+
+![Ver video](./src/assets/demo.png)
