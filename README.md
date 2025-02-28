@@ -68,6 +68,10 @@ Miralo en: [http://localhost:3000](http://localhost:3000)
 
 Para más información las configuraciones se encuentra dentro de cada archivo `vite.config.js`.
 
-## Demostración 📸
+## Prueba 📸
+
+![](./src/assets/challenge.png)
+
+## Mi resultado 📸
 
 ![Ver video](./src/assets/demo.png)
