@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <main className="w-full h-full bg-white dark:bg-dark">
-      <div className="w-full h-full max-w-[80rem] flex flex-col items-center md:px-[1.5rem] lg:px-[4rem] overflow-hidden">
+      <div className="w-full h-full max-w-[80rem] mx-auto flex flex-col items-center md:px-[1.5rem] lg:px-[4rem] overflow-hidden">
         <div className="w-full h-[3.875rem] flex items-center justify-between">
           <button
             onClick={() => window.history.back()}
